@@ -114,5 +114,5 @@ handle negative values and values larger than the size of the belt in the same w
 
 Now modify ```BeltImpl``` so that after a rotation occurs, all registered customers are notified if there is 
 now a plate at the customer's position by calling the customer's ```observePlateOnBelt``` method with
-the appropriate values as parameters. The value of the position parameter should be normalized between 0
+the appropriate values as parameters. The value of the position parameter should be in the range between 0
 and the size of the belt minus one. 
