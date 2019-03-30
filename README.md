@@ -41,7 +41,7 @@ Add the following methods to the Belt interface:
   * ```void removeBeltObserver(BeltObserver o)```
   
 These methods should register and unregister a ```BeltObserver``` with a belt. Modify ```BeltImpl``` to be observable
-by implementing these methods delivering ```PlateEvent``` objects to registered observers through their
+by implementing these methods and delivering ```PlateEvent``` objects to registered observers through their
 ```handlePlateEvent``` method as appropriate when plates are placed/removed.
 
 Now create the following two classes that implement ```BeltObserver```:
