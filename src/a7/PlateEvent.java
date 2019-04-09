@@ -1,6 +1,7 @@
 package a7;
 
 import comp401sushi.Plate;
+import comp401sushi.*;
 
 public class PlateEvent {
 	public enum EventType {PLATE_PLACED, PLATE_REMOVED};

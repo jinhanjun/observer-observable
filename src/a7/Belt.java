@@ -2,7 +2,7 @@ package a7;
 
 import java.util.Iterator;
 
-import comp401sushi.Plate;
+import comp401sushi.*;
 
 /**
  * The Belt interface represents the belt in a sushi restaurant upon which 

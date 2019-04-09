@@ -1,6 +1,7 @@
 package a7;
 
 import a7.PlateEvent.EventType;
+import comp401sushi.*;
 import comp401sushi.Plate;
 
 public class PlateCounter implements BeltObserver {

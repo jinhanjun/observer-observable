@@ -1,4 +1,5 @@
 package a7;
+import comp401sushi.*;
 
 public class ProfitCounter implements BeltObserver {
 	private Belt observable;
@@ -44,7 +45,8 @@ public class ProfitCounter implements BeltObserver {
 		return profit;
 	}
 	
-	/* Returns average profit of the Belt
+	/* Returns average
+	 *  profit of the Belt
 	 */
 	public double getAverageBeltProfit() {
 		return profit / numPlates;

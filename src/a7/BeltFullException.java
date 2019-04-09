@@ -1,4 +1,5 @@
 package a7;
+import comp401sushi.*;
 
 public class BeltFullException extends Exception {
 	private Belt _belt;
