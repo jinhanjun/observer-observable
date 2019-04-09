@@ -6,7 +6,6 @@ import java.util.List;
 
 import a7.PlateEvent.EventType;
 import comp401sushi.Plate;
-import comp401sushi.*;
 
 
 public class BeltImpl implements Belt {
@@ -63,9 +62,8 @@ public class BeltImpl implements Belt {
 	@Override
 	public void clearPlateAtPosition(int position) {
 		position = normalize_position(position);
-		
-		_belt[position] = null;	
 		notifyObservers(new PlateEvent(EventType.PLATE_REMOVED, this.getPlateAtPosition(position), position));
+		_belt[position] = null;	
 	}
 
 	/* Normalizes the position to map to an actual position on the belt
@@ -108,6 +106,13 @@ public class BeltImpl implements Belt {
 			_belt[i] = _belt[i-1];
 		}
 		_belt[0] = last_plate;
+		
+		for (int i = 0; i < customers.length; i++) {
+			if (customers[i] != null) {
+				customers[i].observePlateOnBelt(this, _belt[i], i);
+			}
+		}
+		
 	}
 
 	/* Adds an additional belt observer
@@ -140,15 +145,17 @@ public class BeltImpl implements Belt {
 	@Override
 	public void registerCustomerAtPosition(Customer c, int position) {
 		position = normalize_position(position);
-		if (!(customers[position] == null)) {
-			throw new RuntimeException();
-		}
 		if (c == null) {
 			throw new IllegalArgumentException();
 		}
+		if (!(customers[position] == null)) {
+			throw new RuntimeException();
+		}
 		for (int i = 0; i < customers.length; i++) {
-			if (customers[i].equals(c)) {
-				throw new RuntimeException();
+			if (customers[i] != null) {
+				if (customers[i].equals(c)) {
+					throw new RuntimeException();
+				}
 			}
 		}
 		customers[position] = c;
