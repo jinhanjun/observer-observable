@@ -15,14 +15,20 @@ public class PlateEvent {
 		this.position = position;
 	}
 	
+	/* Type of EventType
+	 */
 	public EventType getType() {
 		return type;
 	}
 	
-	public  Plate getPlate() {
+	/* Returns the Plate associated with the Event
+	 */
+	public Plate getPlate() {
 		return plate;
 	}
 	
+	/* Returns the position associated with the Event
+	 */
 	public int getPosition() {
 		return position;
 	}

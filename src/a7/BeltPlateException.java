@@ -29,14 +29,20 @@ public class BeltPlateException extends Exception {
 		_belt = belt;
 	}
 
+	/* Returns the position associated with the exception
+	 */
 	public int getPosition() {
 		return _position;
 	}
 
+	/* Returns the plate associated with the exception
+	 */
 	public Plate getPlateToSet() {
 		return _plate;
 	}
 
+	/* Returns the Belt associated with the exception
+	 */
 	public Belt getBelt() {
 		return _belt;
 	}

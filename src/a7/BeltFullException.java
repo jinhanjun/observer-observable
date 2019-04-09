@@ -8,6 +8,8 @@ public class BeltFullException extends Exception {
 		_belt = belt;
 	}
 	
+	/* Returns the Belt associated with the exception
+	 */
 	public Belt getBelt() {
 		return _belt;
 	}

@@ -77,4 +77,16 @@ public interface Belt {
 	 */	
 	public void rotate();
 	
+	/*Register beltObserver with a belt
+	 */
+	public void addBeltObserver(BeltObserver o);
+	
+	/*Unregister beltObserver with a belt
+	 */
+	public void removeBeltObserver(BeltObserver o);
+	
+	public void registerCustomerAtPosition(Customer c, int position);
+
+	public Customer unregisterCustomerAtPosition(int position);
+	
 }
